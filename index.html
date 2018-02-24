@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html -->
+<html ng-app="DashPlayer" lang="en" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Dash JavaScript Player</title>
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" href="http://dashpg.com/w/2012/09/dashif.ico">
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">
+
+    <link rel="stylesheet" href="./Dash JavaScript Player_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Dash JavaScript Player_files/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="./Dash JavaScript Player_files/angular.treeview.css">
+    <link rel="stylesheet" href="./Dash JavaScript Player_files/main.css">
+
+    <!-- http://jquery.com/ -->
+    <script src="./Dash JavaScript Player_files/jquery-1.10.2.min.js"></script>
+
+    <!-- http://angularjs.org/ -->
+    <script src="./Dash JavaScript Player_files/angular.min.js"></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+    <script src="./Dash JavaScript Player_files/angular-resource.min.js"></script>
+
+    <!-- http://getbootstrap.com/ -->
+    <script src="./Dash JavaScript Player_files/bootstrap.min.js"></script>
+
+    <!-- https://github.com/creynders/dijon-framework -->
+    <script src="./Dash JavaScript Player_files/dijon.js"></script>
+
+    <!-- http://bannister.us/weblog/2007/06/09/simple-base64-encodedecode-javascript/ -->
+    <script src="./Dash JavaScript Player_files/base64.js"></script>
+
+    <!-- Misc Libs -->
+    <script src="./Dash JavaScript Player_files/xml2json.js"></script>
+    <script src="./Dash JavaScript Player_files/objectiron.js"></script>
+    <script src="./Dash JavaScript Player_files/long.js"></script>
+    <script src="./Dash JavaScript Player_files/Math.js"></script>
+
+    <!-- http://www.flotcharts.org/ -->
+    <script src="./Dash JavaScript Player_files/jquery.flot.js"></script>
+
+    <!-- https://github.com/eu81273/angular.treeview -->
+    <script src="./Dash JavaScript Player_files/angular.treeview.min.js"></script>
+
+    <!-- Player -->
+    <script src="./Dash JavaScript Player_files/MediaPlayer.js"></script>
+    <script src="./Dash JavaScript Player_files/Context.js"></script>
+    <script src="./Dash JavaScript Player_files/ErrorHandler.js"></script>
+    <script src="./Dash JavaScript Player_files/Capabilities.js"></script>
+    <script src="./Dash JavaScript Player_files/DOMStorage.js"></script>
+    <script src="./Dash JavaScript Player_files/EventBus.js"></script>
+    <script src="./Dash JavaScript Player_files/Debug.js"></script>
+    <script src="./Dash JavaScript Player_files/CustomTimeRanges.js"></script>
+    <script src="./Dash JavaScript Player_files/VirtualBuffer.js"></script>
+    <script src="./Dash JavaScript Player_files/RequestModifierExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/VideoModel.js"></script>
+    <script src="./Dash JavaScript Player_files/FragmentRequest.js"></script>
+    <script src="./Dash JavaScript Player_files/TrackInfo.js"></script>
+    <script src="./Dash JavaScript Player_files/MediaInfo.js"></script>
+    <script src="./Dash JavaScript Player_files/StreamInfo.js"></script>
+    <script src="./Dash JavaScript Player_files/ManifestInfo.js"></script>
+    <script src="./Dash JavaScript Player_files/Event.js"></script>
+    <script src="./Dash JavaScript Player_files/Error.js"></script>
+    <script src="./Dash JavaScript Player_files/BitrateInfo.js"></script>
+    <script src="./Dash JavaScript Player_files/DataChunk.js"></script>
+    <script src="./Dash JavaScript Player_files/ManifestLoader.js"></script>
+    <script src="./Dash JavaScript Player_files/ManifestUpdater.js"></script>
+    <script src="./Dash JavaScript Player_files/ManifestModel.js"></script>
+    <script src="./Dash JavaScript Player_files/MediaSourceExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/SourceBufferExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/VideoModelExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/PlaybackController.js"></script>
+    <script src="./Dash JavaScript Player_files/FragmentController.js"></script>
+    <script src="./Dash JavaScript Player_files/AbrController.js"></script>
+    <script src="./Dash JavaScript Player_files/FragmentLoader.js"></script>
+    <script src="./Dash JavaScript Player_files/FragmentModel.js"></script>
+    <script src="./Dash JavaScript Player_files/StreamController.js"></script>
+    <script src="./Dash JavaScript Player_files/StreamProcessor.js"></script>
+    <script src="./Dash JavaScript Player_files/ScheduleController.js"></script>
+    <script src="./Dash JavaScript Player_files/TimeSyncController.js"></script>
+    <script src="./Dash JavaScript Player_files/Stream.js"></script>
+    <script src="./Dash JavaScript Player_files/BufferController.js"></script>
+    <script src="./Dash JavaScript Player_files/LiveEdgeFinder.js"></script>
+    <script src="./Dash JavaScript Player_files/Notifier.js"></script>
+    <script src="./Dash JavaScript Player_files/EventController.js"></script>
+    <script src="./Dash JavaScript Player_files/URIQueryAndFragmentModel.js"></script>
+    <script src="./Dash JavaScript Player_files/URIFragmentData.js"></script>
+    <script src="./Dash JavaScript Player_files/XlinkController.js"></script>
+    <script src="./Dash JavaScript Player_files/XlinkLoader.js"></script>
+
+    <!--Protection-->
+    <script src="./Dash JavaScript Player_files/ProtectionModel.js"></script>
+    <script src="./Dash JavaScript Player_files/ProtectionModel_01b.js"></script>
+    <script src="./Dash JavaScript Player_files/ProtectionModel_3Feb2014.js"></script>
+    <script src="./Dash JavaScript Player_files/ProtectionModel_21Jan2015.js"></script>
+    <script src="./Dash JavaScript Player_files/ClearKeyKeySet.js"></script>
+    <script src="./Dash JavaScript Player_files/KeyPair.js"></script>
+    <script src="./Dash JavaScript Player_files/SessionToken.js"></script>
+
+    <script src="./Dash JavaScript Player_files/ProtectionController.js"></script>
+    <script src="./Dash JavaScript Player_files/ProtectionExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/CommonEncryption.js"></script>
+
+    <script src="./Dash JavaScript Player_files/KeySystem.js"></script>
+    <script src="./Dash JavaScript Player_files/KeySystem_Access.js"></script>
+    <script src="./Dash JavaScript Player_files/KeySystem_ClearKey.js"></script>
+    <script src="./Dash JavaScript Player_files/KeySystem_PlayReady.js"></script>
+    <script src="./Dash JavaScript Player_files/KeySystem_Widevine.js"></script>
+    <script src="./Dash JavaScript Player_files/KeySystem.js"></script>
+
+    <script src="./Dash JavaScript Player_files/ClearKey.js"></script>
+    <script src="./Dash JavaScript Player_files/PlayReady.js"></script>
+    <script src="./Dash JavaScript Player_files/Widevine.js"></script>
+    <script src="./Dash JavaScript Player_files/DRMToday.js"></script>
+
+    <script src="./Dash JavaScript Player_files/KeyError.js"></script>
+    <script src="./Dash JavaScript Player_files/KeyMessage.js"></script>
+    <script src="./Dash JavaScript Player_files/LicenseRequestComplete.js"></script>
+    <script src="./Dash JavaScript Player_files/NeedKey.js"></script>
+    <script src="./Dash JavaScript Player_files/ProtectionData.js"></script>
+    <script src="./Dash JavaScript Player_files/KeySystemAccess.js"></script>
+    <script src="./Dash JavaScript Player_files/KeySystemConfiguration.js"></script>
+    <script src="./Dash JavaScript Player_files/MediaCapability.js"></script>
+
+    <!--Rules-->
+    <script src="./Dash JavaScript Player_files/SwitchRequest.js"></script>
+    <script src="./Dash JavaScript Player_files/RulesContext.js"></script>
+    <script src="./Dash JavaScript Player_files/RulesController.js"></script>
+
+    <script src="./Dash JavaScript Player_files/InsufficientBufferRule.js"></script>
+    <script src="./Dash JavaScript Player_files/ABRRulesCollection.js"></script>
+    <script src="./Dash JavaScript Player_files/BufferOccupancyRule.js"></script>
+    <script src="./Dash JavaScript Player_files/ThroughputRule.js"></script>
+    <script src="./Dash JavaScript Player_files/AbandonRequestsRule.js"></script>
+
+    <script src="./Dash JavaScript Player_files/ScheduleRulesCollection.js"></script>
+    <script src="./Dash JavaScript Player_files/BufferLevelRule.js"></script>
+    <script src="./Dash JavaScript Player_files/PendingRequestsRule.js"></script>
+    <script src="./Dash JavaScript Player_files/SameTimeRequestRule.js"></script>
+    <script src="./Dash JavaScript Player_files/PlaybackTimeRule.js"></script>
+
+    <script src="./Dash JavaScript Player_files/LiveEdgeBinarySearchRule.js"></script>
+    <script src="./Dash JavaScript Player_files/LiveEdgeWithTimeSynchronizationRule.js"></script>
+    <script src="./Dash JavaScript Player_files/SynchronizationRulesCollection.js"></script>
+
+    <!--Captioning-->
+    <script src="./Dash JavaScript Player_files/VTTParser.js"></script>
+    <script src="./Dash JavaScript Player_files/TTMLParser.js"></script>
+    <script src="./Dash JavaScript Player_files/TextSourceBuffer.js"></script>
+    <script src="./Dash JavaScript Player_files/TextTrackExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/TextController.js"></script>
+
+    <!-- Metrics -->
+    <script src="./Dash JavaScript Player_files/MetricsModel.js"></script>
+    <script src="./Dash JavaScript Player_files/MetricsList.js"></script>
+    <script src="./Dash JavaScript Player_files/BufferLevel.js"></script>
+    <script src="./Dash JavaScript Player_files/BufferState.js"></script>
+    <script src="./Dash JavaScript Player_files/HTTPRequest.js"></script>
+    <script src="./Dash JavaScript Player_files/PlayList.js"></script>
+    <script src="./Dash JavaScript Player_files/RepresentationSwitch.js"></script>
+    <script src="./Dash JavaScript Player_files/TCPConnection.js"></script>
+    <script src="./Dash JavaScript Player_files/DroppedFrames.js"></script>
+    <script src="./Dash JavaScript Player_files/SchedulingInfo.js"></script>
+    <script src="./Dash JavaScript Player_files/ManifestUpdate.js"></script>
+    <script src="./Dash JavaScript Player_files/DVRInfo.js"></script>
+
+    <!-- Dash -->
+    <script src="./Dash JavaScript Player_files/Dash.js"></script>
+    <script src="./Dash JavaScript Player_files/DashContext.js"></script>
+    <script src="./Dash JavaScript Player_files/Mpd.js"></script>
+    <script src="./Dash JavaScript Player_files/Period.js"></script>
+    <script src="./Dash JavaScript Player_files/AdaptationSet.js"></script>
+    <script src="./Dash JavaScript Player_files/Representation.js"></script>
+    <script src="./Dash JavaScript Player_files/Segment.js"></script>
+    <script src="./Dash JavaScript Player_files/Event(1).js"></script>
+    <script src="./Dash JavaScript Player_files/EventStream.js"></script>
+    <script src="./Dash JavaScript Player_files/UTCTiming.js"></script>
+    <script src="./Dash JavaScript Player_files/DashParser.js"></script>
+    <script src="./Dash JavaScript Player_files/DashHandler.js"></script>
+    <script src="./Dash JavaScript Player_files/RepresentationController.js"></script>
+    <script src="./Dash JavaScript Player_files/BaseURLExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/FragmentExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/DashManifestExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/DashMetricsExtensions.js"></script>
+    <script src="./Dash JavaScript Player_files/TimelineConverter.js"></script>
+    <script src="./Dash JavaScript Player_files/DashAdapter.js"></script>
+
+    <!-- App -->
+    <script src="./Dash JavaScript Player_files/metrics.js"></script>
+    <script src="./Dash JavaScript Player_files/main.js"></script>
+</head>
+<body ng-controller="DashController" style="" class="ng-scope">
+	<!--
+    <div class="modal fade" id="streamModal">
+        <div class="modal-dialog">
+            <div class="list-group modal-list">
+                <!-- ngRepeat: item in availableStreams --><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 5
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 8
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 9
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 10
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 11
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate 12
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate 5
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate 6
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate 7
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate 8
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 5
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 6
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 10
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 11
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 12
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 13
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Audio Representations 14
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Addition of Timed Text 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Addition of Timed Text 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Addition of Timed Text 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Periods 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multiple Periods 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Dynamic Segment Offering with MPD Update 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Dynamic Segment Offering with MPD Update 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Dynamic Segment Offering with MPD Update 4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate HD 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate HD 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate HD 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate HD 4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Single Resolution Multi-Rate HD 5
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate HD 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate HD 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate HD 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate HD 4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate HD 5
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate HD 6
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Multi-Resolution Multi-Rate HD 7
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Dolby 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Dolby 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Dolby 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Dolby 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS A 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS A 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS A 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS A 4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS B 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS B 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS B 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS D 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS D 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS D 3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    DTS D 4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    MPEG Surround 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    MPEG Surround 1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    MPEG Surround 2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Caption Test
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    4K
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Envivio
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Segment List
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Segment Template
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Unified Streaming - Timeline
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Unified Streaming Live
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Microsoft #1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Microsoft #2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Microsoft #3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Microsoft #4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Microsoft #5
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Microsoft Cenc #1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    Microsoft Cenc #4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    D-Dash #1
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    D-Dash #2
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    D-Dash #3
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    D-Dash #4
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    D-Dash #5
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    D-Dash #6
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc ClearKey
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc ClearKey (InitData in MPD)
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc Widevine
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc Widevine/ClearKey
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc Widevine/ClearKey (InitData in MPD)
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc PlayReady
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc PlayReady (InitData in MPD)
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc PR/WV
+                </a><a ng-repeat="item in availableStreams" href="http://dashif.org/reference/players/javascript/1.4.0/samples/dash-if-reference-player/index.html#" class="list-group-item ng-scope ng-binding" ng-click="setStream(item)" data-dismiss="modal">
+                    CableLabs Cenc PR/WV (InitData in MPD)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row title-header">
+            <a href="http://dashif.org/" target="_blank"><img class="image" src="./Dash JavaScript Player_files/if.png"></a>
+            <span id="big-title">Reference Client</span>
+            <span class="ng-binding">1.4.0</span>
+
+            <div class="github">
+                <iframe id="star-button" src="./Dash JavaScript Player_files/github-btn.html" height="30" width="170" frameborder="0" scrolling="0" allowtransparency="true" class="hidden-xs github-button">
+                </iframe>
+                <iframe id="fork-button" src="./Dash JavaScript Player_files/github-btn(1).html" height="30" width="170" frameborder="0" scrolling="0" allowtransparency="true github-button">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group">
+                <div id="desktop-streams" class="input-group-btn">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Stream <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <!-- ngRepeat: item in availableStreams --><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 5</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 8</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 9</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 10</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 11</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate 12</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate 5</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate 6</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate 7</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate 8</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 5</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 6</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 10</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 11</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 12</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 13</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Audio Representations 14</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Addition of Timed Text 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Addition of Timed Text 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Addition of Timed Text 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Periods 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multiple Periods 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Dynamic Segment Offering with MPD Update 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Dynamic Segment Offering with MPD Update 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Dynamic Segment Offering with MPD Update 4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate HD 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate HD 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate HD 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate HD 4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Single Resolution Multi-Rate HD 5</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate HD 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate HD 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate HD 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate HD 4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate HD 5</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate HD 6</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Multi-Resolution Multi-Rate HD 7</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Dolby 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Dolby 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Dolby 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Dolby 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS A 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS A 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS A 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS A 4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS B 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS B 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS B 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS D 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS D 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS D 3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">DTS D 4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">MPEG Surround 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">MPEG Surround 1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">MPEG Surround 2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Caption Test</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">4K</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Envivio</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Segment List</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Segment Template</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Unified Streaming - Timeline</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Unified Streaming Live</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Microsoft #1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Microsoft #2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Microsoft #3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Microsoft #4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Microsoft #5</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Microsoft Cenc #1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">Microsoft Cenc #4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">D-Dash #1</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">D-Dash #2</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">D-Dash #3</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">D-Dash #4</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">D-Dash #5</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">D-Dash #6</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc ClearKey</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc ClearKey (InitData in MPD)</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc Widevine</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc Widevine/ClearKey</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc Widevine/ClearKey (InitData in MPD)</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc PlayReady</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc PlayReady (InitData in MPD)</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc PR/WV</a>
+                        </li><li ng-repeat="item in availableStreams" ng-click="setStream(item)" class="ng-scope">
+                            <a class="ng-binding">CableLabs Cenc PR/WV (InitData in MPD)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="mobile-streams" class="input-group-btn">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" href="#streamModal">
+                        Stream <span class="caret"></span>
+                    </button>
+                </div>
+                <input type="text" class="form-control ng-pristine ng-valid" placeholder="manifest" ng-model="selectedItem.url">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" ng-click="doLoad()">Load</button>
+                </span>
+	    </div> 
+	</div> -->
+
+        <div class="row">
+            <div class="dash-video-player col-md-9">
+                <video controls="true"></video>
+            </div>
+            <div class="col-md-3">
+                <div class="panel">
+                    <div class="panel-heading panel-top">
+                        <span class="panel-title">Sync</span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" ng-class="{active:syncEnabled == false}" >
+                                <span>Off</span>
+                            </button>
+                            <button type="button" class="btn btn-default active" ng-class="{active:syncEnabled == true}" ng-click="streamSync()">
+                                <span>On</span>
+                            </button>
+                        </div>
+<!--
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" ng-class="{active:abrEnabled == false}" ng-click="setAbrEnabled(false)">
+                                <span>Off</span>
+                            </button>
+                            <button type="button" class="btn btn-default active" ng-class="{active:abrEnabled == true}" ng-click="setAbrEnabled(true)">
+                                <span>On</span>
+                            </button>
+                        </div>
+-->
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading panel-top">
+                        <span class="panel-title">Video</span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" ng-click="abrDown(&#39;video&#39;)">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                            <button type="button" class="btn btn-default" ng-click="abrUp(&#39;video&#39;)">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-body panel-stats">
+                        <p class="text-warning ng-binding">0 kbps</p>
+                        <p class="text-primary">Rep Index: <span class="text-success ng-binding">0</span><span class="text-warning ng-binding"></span>/<span class="text-success ng-binding">0</span></p>
+                        <p class="text-primary">Buffer Length: <span class="text-success ng-binding">0</span></p>
+                        <p class="text-primary">Latency: <span class="text-success ng-binding">last 0 segments</span></p>
+                        <p class="text-success ng-binding" title="[low] &lt; [average] &lt; [high]"></p>
+                        <p class="text-primary">Download: <span class="text-success ng-binding">last 0 segments</span></p>
+                        <p class="text-success ng-binding" title="[low] &lt; [average] &lt; [high]"></p>
+                        <p class="text-primary">Ratio: <span class="text-success ng-binding">last 0 segments</span></p>
+                        <p class="text-success ng-binding" title="[low] &lt; [average] &lt; [high]"></p>
+                        <p class="text-primary">Dropped Frames: <span class="text-success ng-binding">0</span></p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading panel-top">
+                        <span class="panel-title">Audio</span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" ng-click="abrDown(&#39;audio&#39;)">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                            <button type="button" class="btn btn-default" ng-click="abrUp(&#39;audio&#39;)">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </div>
+                    </div>
+		    <!--
+                    <div class="panel-body panel-stats">
+                        <p class="text-warning ng-binding">0 kbps</p>
+                        <p class="text-primary">Rep Index: <span class="text-success ng-binding">0</span><span class="text-warning ng-binding"></span>/<span class="text-success ng-binding">0</span></p>
+                        <p class="text-primary">Buffer Length: <span class="text-success ng-binding">0</span></p>
+                        <p class="text-primary">Latency: <span class="text-success ng-binding">last  segments</span></p>
+                        <p class="text-success ng-binding" title="[low] &lt; [average] &lt; [high]"></p>
+                        <p class="text-primary">Download: <span class="text-success ng-binding">last 0 segments</span></p>
+                        <p class="text-success ng-binding" title="[low] &lt; [average] &lt; [high]"></p>
+                        <p class="text-primary">Ratio: <span class="text-success ng-binding">last 0 segments</span></p>
+                        <p class="text-success ng-binding" title="[low] &lt; [average] &lt; [high]"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel">
+                <div class="panel-heading panel-top">
+                    <span class="panel-title">Charts</span>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default active" ng-class="{active:showCharts == false}" ng-click="setCharts(false)">
+                            Hide
+                        </button>
+                        <button type="button" class="btn btn-default" ng-class="{active:showCharts == true}" ng-click="setCharts(true)">
+                            Show
+                        </button>
+                    </div>
+                </div>
+                <div ng-switch="" on="showCharts">
+                    <!-- ngSwitchWhen: true -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel">
+                <div class="panel-heading panel-top">
+                    <span class="panel-title">Debug</span>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default active" ng-class="{active:showDebug == false}" ng-click="setDebug(false)">
+                            Hide
+                        </button>
+                        <button type="button" class="btn btn-default" ng-class="{active:showDebug == true}" ng-click="setDebug(true)">
+                            Show
+                        </button>
+                    </div>
+                </div>
+                <div ng-switch="" on="showDebug">
+                    <!-- ngSwitchWhen: true -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="compat-box col-md-5">
+                    <h3>Compatibility Notes:</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="https://github.com/Dash-Industry-Forum/dash.js">This project can be forked on GitHub.</a></li>
+                        <li class="list-group-item">Use your browser's JavaScript console to view detailed information about stream playback.</li>
+                        <li class="list-group-item"><a href="http://dashif.org/reference/players/javascript/1.4.0/samples/getting-started-basic-embed/auto-load-single-video.html">See a base implementation here.</a></li>
+                        <li class="list-group-item">A browser that supports MSE (Media Source Extensions) is required.</li>
+                        <li class="list-group-item">As of 2/1/2015 supported on the following browsers: Desktop Chrome, Desktop Internet Explorer 11 under WIn8.1, Mobile Chrome for Android and Safari on Mac Yosemite</li>
+                        <li class="list-group-item">Use the most up-to-date version of your browser for the best compatibility.</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="footer-text">Player Libraries:</h3>
+                    <!-- ngRepeat: item in playerLibraries --><a ng-repeat="item in playerLibraries" class="footer-text ng-scope ng-binding" href="https://github.com/creynders/dijon-framework" target="_blank">
+                        dijon
+                    </a><a ng-repeat="item in playerLibraries" class="footer-text ng-scope ng-binding" href="http://bannister.us/weblog/2007/06/09/simple-base64-encodedecode-javascript/" target="_blank">
+                        base64
+                    </a><a ng-repeat="item in playerLibraries" class="footer-text ng-scope ng-binding" href="http://pivotal.github.io/jasmine/" target="_blank">
+                        jasmine
+                    </a>
+                    <h3 class="footer-text">Showcase Libraries:</h3>
+                    <!-- ngRepeat: item in showcaseLibraries --><a ng-repeat="item in showcaseLibraries" class="footer-text ng-scope ng-binding" href="http://jquery.com/" target="_blank">
+                        jquery
+                    </a><a ng-repeat="item in showcaseLibraries" class="footer-text ng-scope ng-binding" href="http://angularjs.org/" target="_blank">
+                        angular
+                    </a><a ng-repeat="item in showcaseLibraries" class="footer-text ng-scope ng-binding" href="http://getbootstrap.com/" target="_blank">
+                        bootstrap
+                    </a><a ng-repeat="item in showcaseLibraries" class="footer-text ng-scope ng-binding" href="http://www.flotcharts.org/" target="_blank">
+                        flot
+                    </a><a ng-repeat="item in showcaseLibraries" class="footer-text ng-scope ng-binding" href="https://github.com/eu81273/angular.treeview" target="_blank">
+                        angular treeview
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-text">Contributors:</h3>
+                    <!-- ngRepeat: item in contributors --><a ng-repeat="item in contributors" class="footer-text ng-scope" href="http://www.digitalprimates.net/" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="app/img/dp.png" alt="http://www.digitalprimates.net" src="./Dash JavaScript Player_files/dp.png">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)" style="display: none;">Digital Primates</span>
+                    </a><a ng-repeat="item in contributors" class="footer-text ng-scope" href="http://msopentech.com/" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="app/img/MSOpenTech.jpg" alt="http://msopentech.com" src="./Dash JavaScript Player_files/MSOpenTech.jpg">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)" style="display: none;">Microsoft Open Technologies</span>
+                    </a><a ng-repeat="item in contributors" class="footer-text ng-scope" href="http://www.youtube.com/" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="app/img/youtube.png" alt="http://www.youtube.com" src="./Dash JavaScript Player_files/youtube.png">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)" style="display: none;">YouTube</span>
+                    </a><a ng-repeat="item in contributors" class="footer-text ng-scope" href="http://www.akamai.com/" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="app/img/akamai_ff.png" alt="http://www.akamai.com" src="./Dash JavaScript Player_files/akamai_ff.png">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)" style="display: none;">Akamai</span>
+                    </a><a ng-repeat="item in contributors" class="footer-text ng-scope" href="https://github.com/senthil-codr" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="" alt="https://github.com/senthil-codr" style="display: none;">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)">Senthil</span>
+                    </a><a ng-repeat="item in contributors" class="footer-text ng-scope" href="https://www.brightcove.com/" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="app/img/brightcove.png" alt="https://www.brightcove.com" src="./Dash JavaScript Player_files/brightcove.png">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)" style="display: none;">Brightcove</span>
+                    </a><a ng-repeat="item in contributors" class="footer-text ng-scope" href="https://www.fokus.fraunhofer.de/go/fame" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="app/img/fh_fokus.png" alt="https://www.fokus.fraunhofer.de/go/fame" src="./Dash JavaScript Player_files/fh_fokus.png">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)" style="display: none;">Fraunhofer Fokus</span>
+                    </a><a ng-repeat="item in contributors" class="footer-text ng-scope" href="http://www.cablelabs.com/" target="_blank">
+                        <img ng-show="hasLogo(item)" ng-src="app/img/cablelabs.png" alt="http://www.cablelabs.com" src="./Dash JavaScript Player_files/cablelabs.png">
+                        <span class="contributor ng-binding" ng-show="!hasLogo(item)" style="display: none;">CableLabs</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    -->
+
+</body></html>
