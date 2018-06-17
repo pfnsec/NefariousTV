@@ -28,6 +28,8 @@ def run():
         if item is None:
             break
         
+        #path = item['path']
+
         item = os.path.split(item)
 
         subdir = os.path.join(*item[:-1])
@@ -35,6 +37,24 @@ def run():
         pprint(f'Subdir:{subdir}')
 
         item = item[-1]
+
+        ext = os.path.splitext(item)[1]
+
+
+        allowed_extensions = [
+            '.mp4',
+            '.mkv',
+            '.flv',
+            '.avi',
+            '.webm',
+            '.mov',
+        ]
+
+        if(ext not in allowed_extensions):
+            EncoderQueue.task_done()
+            continue 
+
+        print(ext)
         
         #Strip file extension
         name = os.path.splitext(item)[0]
@@ -65,9 +85,9 @@ def run():
         sub = ffmpeg_escape(item)
 
         #subprocess.check_call(['../dash-convert', item, name], cwd='video')
+                                 #-vf subtitles="./{subdir}/{sub}" \
         try:
-            out = subprocess.check_output(f'ffmpeg -i "{subdir}/{item}" \
-                                 -vf subtitles="{subdir}/{sub}" \
+            out = subprocess.check_output(f'ffmpeg -i "./{subdir}/{item}" \
                                  -vcodec libx264       \
                                     -preset slower     \
                                     -tune animation    \
@@ -82,11 +102,11 @@ def run():
             print("Re-running without subtitles")
 
             try:
-                out = subprocess.check_output(f'ffmpeg -i "{subdir}/{item}" \
+                out = subprocess.check_output(f'ffmpeg -i "./{subdir}/{item}" \
                                      -vcodec libx264       \
                                         -preset slower     \
                                         -tune animation    \
-                                     -f dash "{subdir}/{name}/{name}".mpd', 
+                                     -f dash "./{subdir}/{name}/{name}".mpd', 
                                         cwd='video',
                                         encoding='utf-8',
                                         shell=True

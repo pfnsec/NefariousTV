@@ -41,6 +41,8 @@ settings = {
     'alert_mask':alert_mask
 }
 
+enableTorrents = True
+
 session.apply_settings(settings)
 
 alert_event = threading.Event()
@@ -57,7 +59,8 @@ def dispatcher():
         alerts = [a for a in alerts if type(a) is not lt.block_finished_alert]
 
         if len(alerts) > 0:
-            pprint(alerts)
+            #pprint(alerts)
+            pass
 
         for a in alerts:
             if type(a) is lt.file_completed_alert:
@@ -73,7 +76,7 @@ def dispatcher():
                 #pprint(a.handle.torrent_file())
                 #pprint(dir(a.handle.torrent_file()))
                 if(a.state == lt.torrent_status.seeding):
-                    torrent_event.wait()
+                    torrent_event.set()
                     session.remove_torrent(a.handle)
                     handles.remove(a.handle)
 
@@ -106,7 +109,7 @@ def queueTorrent(url, uuid):
         'url':url,
         'uuid':uuid,
         'complete':False
-        }
+    }
 
     TorrentQueue.put(url)
     print('Queued torrent')
